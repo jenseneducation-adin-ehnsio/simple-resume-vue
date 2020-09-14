@@ -1,4 +1,10 @@
 # cv
+```
+Change data in App.vue
+Add your own image as avatar.img in assets
+Add icons and other images to assets folder
+
+```
 
 ## Project setup
 ```
