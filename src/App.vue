@@ -1,12 +1,9 @@
 <template>
   <div id="app">
-    <div class="top">
-      <p class="italic">Söker LIA plats med start 16 november 2020 - 7 maj 2021</p>
-    </div>
     
     <div class="left">
       <!-- Send object with first and last name, place avatar.jpg in assets  -->
-      <NameAndImg :name="name" :idNumber="idNumber" />
+      <NameAndImg :name="name" />
       <!-- Send object prop with a title and info -->
       <InfoText :info="aboutMe"/>
       
@@ -49,8 +46,8 @@ export default {
     name: { first: "Adin", last: "Ehnsiö"},
     // List of exp
     work: [
-      { place: "Epidemic Sound", title: "Musikproducent", duration: "2020 - nu" },
-      { place: "Frilans", title: "Musikproducent, ljudtekniker", duration: "2015 - nu" },
+      { place: "Epidemic Sound", title: "Musikproducent/Låtskrivare", duration: "2020 - nu" },
+      { place: "Frilans", title: "Musikproducent/Ljudtekniker", duration: "2015 - nu" },
       { place: "PostNord Sverige", title: "Brevbärare/Chaufför", duration: "2016 - 2019" },
       { place: "UNICEF", title: "Administration/Fundraising", duration: "2013 - 2015" },
       { place: "Oslo Kommun/Kanvas", title: "Förskoleassistent", duration: "2010 - 2013"},
@@ -67,7 +64,7 @@ export default {
     // Text sections
     frontEnd: {title: "Front End", info: "Jag är en snabblärd och engagerad front end-utvecklare som älskar en bra user experience. Jag har ett bra öga för detaljer, gillar att jobba i team och tycker det är fantastisk roligt med problemlösning. Jag är van att använda <span>Git</span>, är erfaren med ramverket <span class='green'>Vue.js</span> samt håller på och lära mig <span class='blue'>React.js</span>. I skolan har jag lärt mig att arbeta agilt med <span>Kanban</span> och <span>Scrum</span>, lärt mig bygga och designa responsiva och progressiva webbapplikationer. Jag är van vid att koda front end som nyttjar ett <span>API</span> och vet hur man skriver tester med <span>Jest</span>, dessutom är jag skicklig på <span>CSS</span>." },
     meAtWork: {title: "På jobbet", info: "På jobbet har jag en positiv inställning. Jag är noggrann och jag är bra på att ta egna initiativ men inte rädd för att be om hjälp. Jag är bra på att hantera stressiga situationer, har mycket tålamod och är flexibel när jag stöter på utmaningar. "},
-    aboutMe: {title: "", info: "Jag är en musikproducent med en nyfunnen passion för programmering "},
+    aboutMe: {title: "", info: "Jag är en musikproducent med en nyfunnen passion för programmering"},
     //Social media links, place img in assets and change imgSrc to name of the file 
     socMedia: [
       { title: "linkedin", url: "https://www.linkedin.com/in/adin-ehnsi%C3%B6-0aa1661a4/", imgSrc: 'linkedin.svg'},
@@ -133,7 +130,7 @@ ul {
 }
 #app {
   transition: all 1s ease-in-out;
-  margin: 0 5vw 40px 5vw;
+  margin: 5vw 5vw 5vw 5vw;
   font-family: 'Montserrat', sans-serif;  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -218,7 +215,7 @@ ul {
     }
   }
 }
-@media screen and(max-width: 800px) {
+@media screen and(max-width: 750px) {
   #app {
     margin: 0 0 40px 0;
     grid-template-areas: 
@@ -231,12 +228,11 @@ ul {
   }
 }
 
-@media screen and(max-width: 1000px) {
+@media screen and(max-width: 1100px) {
   #app {
-    margin: 0 0 40px 0;
+    margin: 0;
     .right {
-      border-right: none;
-      border-left: none;
+      border: none;
       p, h1, h2, h3, h4 {
         padding: 0;
       }
