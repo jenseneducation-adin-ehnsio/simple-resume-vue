@@ -40,7 +40,7 @@ export default {
     margin: 10px 0 10px 0;
   }
   .mono {
-    
+    font-weight: 600;
     font-family: monospace;
     padding: 0 !important;
     line-height: 120%;

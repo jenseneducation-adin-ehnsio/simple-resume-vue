@@ -1,7 +1,7 @@
 <template>
   <div class="info-text">
       <h4>{{info.title}}</h4>
-      <p>{{info.info}}</p>
+      <p v-html="info.info"></p>
   </div>
 </template>
 

@@ -6,7 +6,7 @@
     
     <div class="left">
       <!-- Send object with first and last name, place avatar.jpg in assets  -->
-      <NameAndImg :name="name"/>
+      <NameAndImg :name="name" :idNumber="idNumber" />
       <!-- Send object prop with a title and info -->
       <InfoText :info="aboutMe"/>
       
@@ -25,7 +25,7 @@
       <List :title="'Arbetserfarenhet'" :list="work" />
       <List :title="'Studier'" :list="education" />
       <!-- Send empty strings on place and duration for single line -->
-      <List :title="'Övriga kunskaper'" :list="other" />
+      <List :title="'Språk'" style="margin-bottom: 40px" :list="other" />
     </div>
     
   </div>
@@ -49,29 +49,29 @@ export default {
     name: { first: "Adin", last: "Ehnsiö"},
     // List of exp
     work: [
-      { place: "Epidemic Sound", title: "Musikproducent", duration: "2020 - nu"},
-      { place: "PostNord Sverige", title: "Brevbärare/Chaufför", duration: "2016 - 2019"},
-      { place: "UNICEF", title: "Administration/Kundtjänst", duration: "2013 - 2015"},
-      { place: "UNICEF", title: "Fundraiser", duration: "2013 - 2015"},
-      { place: "Oslo Kommun", title: "Förskoleassistent", duration: "2013 - 2015"},
+      { place: "Epidemic Sound", title: "Musikproducent", duration: "2020 - nu" },
+      { place: "Frilans", title: "Musikproducent, ljudtekniker", duration: "2015 - nu" },
+      { place: "PostNord Sverige", title: "Brevbärare/Chaufför", duration: "2016 - 2019" },
+      { place: "UNICEF", title: "Administration/Fundraising", duration: "2013 - 2015" },
+      { place: "Oslo Kommun/Kanvas", title: "Förskoleassistent", duration: "2010 - 2013"},
     ],
     education: [
-      { place: "Jensen Education YH", title: "Front end developer", duration: "2019 - 2021"},
-      { place: "Södertörns högskola", title: "Statsvetenskap", duration: "2018 - 2019"},
-      { place: "Studio Blue", title: "Ljudteknik/Musikproduktion", duration: "2013 - 2015"},
+      { place: "Jensen Education YH", title: "Front end developer", duration: "2019 - 2021" },
+      { place: "Södertörns högskola", title: "Statsvetenskap", duration: "2018 - 2019" },
+      { place: "Studio Blue", title: "Ljudteknik/Musikproduktion", duration: "2013 - 2015" },
+      { place: "Solbergagymnasiet", title: "Estetiska programmet", duration: "2007 - 2010" },
     ],
     other: [
-      { place: "", title: "Språkkunnig (Svenska, Engelska, Norska)", duration: ""},
-      { place: "", title: "Körkort B", duration: ""},
+      { place: "", title: "Svenska | Engelska | Norska", duration: ""},
     ],
     // Text sections
-    frontEnd: {title: "Front End", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
-    meAtWork: {title: "Jag på jobbet", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
-    aboutMe: {title: "Om mig", info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."},
+    frontEnd: {title: "Front End", info: "Jag är en snabblärd och engagerad front end-utvecklare som älskar en bra user experience. Jag har ett bra öga för detaljer, gillar att jobba i team och tycker det är fantastisk roligt med problemlösning. Jag är van att använda <span>Git</span>, är erfaren med ramverket <span class='green'>Vue.js</span> samt håller på och lära mig <span class='blue'>React.js</span>. I skolan har jag lärt mig att arbeta agilt med <span>Kanban</span> och <span>Scrum</span>, lärt mig bygga och designa responsiva och progressiva webbapplikationer. Jag är van vid att koda front end som nyttjar ett <span>API</span> och vet hur man skriver tester med <span>Jest</span>, dessutom är jag skicklig på <span>CSS</span>." },
+    meAtWork: {title: "På jobbet", info: "På jobbet har jag en positiv inställning. Jag är noggrann och jag är bra på att ta egna initiativ men inte rädd för att be om hjälp. Jag är bra på att hantera stressiga situationer, har mycket tålamod och är flexibel när jag stöter på utmaningar. "},
+    aboutMe: {title: "", info: "Jag är en musikproducent med en nyfunnen passion för programmering "},
     //Social media links, place img in assets and change imgSrc to name of the file 
     socMedia: [
       { title: "linkedin", url: "https://www.linkedin.com/in/adin-ehnsi%C3%B6-0aa1661a4/", imgSrc: 'linkedin.svg'},
-      { title: "github", url: "https://www.github.com", imgSrc: 'github.svg'},
+      { title: "github", url: "https://github.com/jenseneducation-adin-ehnsio/simple-resume-vue", imgSrc: 'github.svg'},
     ],
     //Place icons in assets and change imgSrc to name of the file
     contact: [
@@ -84,11 +84,14 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-$green: rgb(16, 114, 53);
+$green: rgb(65,184,131);
+$blue: rgb(97,218,251);
 
 .green {
   color: $green;
-  font-weight: 600;
+}
+.blue {
+  color: $blue;
 }
 h1, h2, h3, h4 {
   margin: 10px
@@ -108,6 +111,9 @@ h1 {
 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.1em;
+  span {
+    font-weight: 600;
+  }
 }
 .border {
   border: 2px black solid;
@@ -175,7 +181,6 @@ ul {
       padding: 0 25px 0 25px;
     }
     .socials, .contact {
-      margin-top: 50px;
       .div {
         display: flex;
         flex-direction: column;
@@ -195,6 +200,9 @@ ul {
       }
     }
     .socials {
+      margin-top: 35px;
+      margin-bottom: 50px;
+
       display: flex;
       img {
         margin-bottom: 0;
