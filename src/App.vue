@@ -72,7 +72,7 @@ export default {
     ],
     //Place icons in assets and change imgSrc to name of the file
     contact: [
-      { title: "076 26 21 733", imgSrc: 'phone.png'},
+      { title: "076-26 21 733", imgSrc: 'phone.png'},
       { title: "adinehnsio@gmail.com", imgSrc: 'mail.png'},
     ]
   }}
@@ -144,7 +144,7 @@ ul {
   justify-items: center;
   
   .right {
-    padding: 20px;
+    padding-top: 20px;
     width: 100%;
     border: 1px solid black;
     grid-area: right;
