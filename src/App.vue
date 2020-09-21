@@ -100,10 +100,10 @@ h1, h2, h3 {
   font-weight: 100;
 }
 h1 {
-  font-size: 1.8em;
+  font-size: 2em;
   margin: 20px;
   text-align: left;
-  letter-spacing: 1px;
+  letter-spacing: .7px;
 }
 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

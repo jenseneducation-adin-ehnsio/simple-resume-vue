@@ -33,7 +33,7 @@ export default {
 
 <style lang="scss" >
   li > p {
-    letter-spacing: .5px;
+    
     font-weight: 500;
     margin: 0;
     font-size: 1.2em;
