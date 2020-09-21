@@ -72,7 +72,7 @@ export default {
     ],
     //Place icons in assets and change imgSrc to name of the file
     contact: [
-      { title: "076 - 2621733", imgSrc: 'phone.png'},
+      { title: "076 26 21 733", imgSrc: 'phone.png'},
       { title: "adinehnsio@gmail.com", imgSrc: 'mail.png'},
     ]
   }}
@@ -107,7 +107,7 @@ h1 {
 }
 p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1.1em;
+  font-size: 17px;
   span {
     font-weight: 600;
   }
@@ -144,6 +144,7 @@ ul {
   justify-items: center;
   
   .right {
+    padding: 20px;
     width: 100%;
     border: 1px solid black;
     grid-area: right;

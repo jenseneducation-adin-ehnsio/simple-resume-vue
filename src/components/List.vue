@@ -33,6 +33,8 @@ export default {
 
 <style lang="scss" >
   li > p {
+    letter-spacing: .5px;
+    font-weight: 500;
     margin: 0;
     font-size: 1.2em;
   }
@@ -40,8 +42,9 @@ export default {
     margin: 10px 0 10px 0;
   }
   .mono {
-    font-weight: 600;
-    font-family: monospace;
+    letter-spacing: normal;
+    font-weight: 400;
+    font-size: 17px;
     padding: 0 !important;
     line-height: 120%;
   }
